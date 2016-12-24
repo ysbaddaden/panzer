@@ -1,0 +1,24 @@
+name: panzer
+version: 0.1.0
+
+authors:
+  - Julien Portalier <julien@portalier.com>
+
+description: |
+  Multi-process workers with zero downtime restarts.
+
+#executables:
+#  - panzer
+#  - panzerctl
+
+targets:
+  panzer:
+    main: src/main.cr
+  #panzerctl:
+  #  main: src/helper.cr
+
+scripts:
+  postinstall: |
+    shards build --debug --release && mkdir ../../bin && cp bin/panzer* ../../bin
+
+license: Apache-2.0
